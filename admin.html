@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Admin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="container">
+            <a href="#" class="popup_open" onclick="document.getElementById('parent_popup').style.display='flex';"> Добавить машину </a>
+            <div id="parent_popup" style="display: none;">
+                <a href="#" class="popup_area" onclick="document.getElementById('parent_popup').style.display='none';"></a>
+                <div class="popup">
+                    <form id="add_item">
+                        <div class="add_item_title"> Добавление новой машины в каталог</div>
+                        <div class="add_item_subtitle"> Пожалуйста, заполните все поля, чтобы добавить машину на сайт</div>
+                        <div class="add_item_inputs">
+                            <div class="add_item_inputs_2col" >
+                                <input type="text" placeholder="ID" readonly name="car_id">
+                                <button id="change_id_readonly1" href="">Принудительно изменить ID</button>
+                            </div>
+                            <input type="text" placeholder="Название машины" name="car_name">
+                            <input type="text" placeholder="Цена проката" name="car_price">
+                            <div class="add_item_inputs_2col" >
+                                <span>Главное изображение:</span>
+                                <input type="file" placeholder="Главное изображение" accept="image/*" name="car_img">
+                            </div>
+                            <button> Готово </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('#change_id_readonly1').click(function() {
+            $("input").removeAttr("readonly");
+            console.log('Norm');
+        });
+    </script>
+</body>
+</html>
